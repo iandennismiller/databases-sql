@@ -4,7 +4,9 @@ author: "Ian Dennis Miller"
 date: "November 3, 2016"
 output:
   ioslides_presentation:
+    autosize: yes
     widescreen: true
+    css: styles.css
   beamer_presentation:
     autosize: yes
     fig_caption: yes
@@ -18,7 +20,7 @@ output:
 
 Get Ready...
 
-## First Slide
+## First Slide {.fill .nobackground #spaghetti-slide}
 
 For more details on authoring R presentations please visit <https://support.rstudio.com/hc/en-us/articles/200486468>.
 
