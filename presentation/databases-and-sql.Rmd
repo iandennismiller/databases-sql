@@ -1,0 +1,45 @@
+---
+title: "Databases and SQL"
+author: "Ian Dennis Miller"
+date: "November 3, 2016"
+output:
+  ioslides_presentation:
+    widescreen: true
+  beamer_presentation:
+    autosize: yes
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 7
+  slidy_presentation:
+    template: quarterly_report.html
+---
+
+# Section 1
+
+Get Ready...
+
+## First Slide
+
+For more details on authoring R presentations please visit <https://support.rstudio.com/hc/en-us/articles/200486468>.
+
+![picture of spaghetti](images/spaghetti.jpg)
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+# Section 2
+
+Here we go...
+
+## Slide With Code
+
+```{r}
+summary(cars)
+```
+
+## Slide With Plot
+
+```{r, echo=FALSE}
+plot(cars)
+```
