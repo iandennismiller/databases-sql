@@ -6,25 +6,19 @@ output:
   ioslides_presentation:
     autosize: yes
     widescreen: true
-    css: styles.css
-  beamer_presentation:
-    autosize: yes
-    fig_caption: yes
-    fig_height: 6
-    fig_width: 7
-  slidy_presentation:
-    template: quarterly_report.html
+    css: assets/styles.css
+    self_contained: false
 ---
 
-# Section 1
+# Data
 
-Get Ready...
+What is data?
 
-## First Slide {.fill .nobackground #spaghetti-slide}
+## First Slide {.side-image}
 
 For more details on authoring R presentations please visit <https://support.rstudio.com/hc/en-us/articles/200486468>.
 
-![picture of spaghetti](images/spaghetti.jpg)
+![picture of spaghetti](assets/spaghetti.jpg)
 
 - Bullet 1
 - Bullet 2

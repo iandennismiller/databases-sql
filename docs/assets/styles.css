@@ -1,4 +1,4 @@
-article img {
+article.side-image img {
     max-width: 50%;
     float: right;
 }

@@ -4,4 +4,5 @@
 .Ruserdata
 presentation/*.md
 presentation/*-figure/
+presentation/*_files/
 presentation/*.html
