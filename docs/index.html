@@ -92,9 +92,13 @@
           </hgroup>
   </slide>
 
-<slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Data</h2></hgroup><article  id="data">
+<slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Data, Information, Knowledge, Wisdom</h2></hgroup><article  id="data-information-knowledge-wisdom">
 
-<p>What is data?</p>
+<p>
+
+</p>
+
+</article></slide><slide class=''><hgroup><h2>Information </h2><h3> Subtitle</h3></hgroup><article  id="information-subtitle">
 
 </article></slide><slide class=''><hgroup><h2>First Slide</h2></hgroup><article  id="first-slide" class="side-image">
 
@@ -108,11 +112,33 @@
 <li>Bullet 3</li>
 </ul>
 
-</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Section 2</h2></hgroup><article  id="section-2">
+</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>HTML5 localStorage</h2></hgroup><article  id="html5-localstorage">
+
+</article></slide><slide class=''><hgroup><h2>Load the helpers</h2></hgroup><article  id="load-the-helpers">
+
+<pre class = 'prettyprint lang-javascript'>function load(src) {
+  var js = document.createElement(&#39;script&#39;);
+  js.src = src;
+  document.getElementsByTagName(&#39;head&#39;)[0].appendChild(js);
+}</pre>
+
+<pre class = 'prettyprint lang-javascript'>load(&quot;https://iandennismiller.github.io/assets/helpers.js&quot;);</pre>
+
+</article></slide><slide class=''><hgroup><h2>Slide With Code</h2></hgroup><article  id="slide-with-code">
+
+<pre class = 'prettyprint lang-javascript'>download_json(&quot;http://www.gh-impact.com/data/json/b3.json&quot;);
+// wait
+Object.keys(df);
+df[&quot;mattn&quot;][&quot;s&quot;];
+// Array.proto.map, Array.proto.reduce
+// the scores come from the data frame keys using this map function
+var scores = Object.keys(df).map( function(key) { return( df[key][&quot;s&quot;] ) } );
+var average = scores.reduce( function(sum, val) { return( sum + val ) }, initialValue=0 ) / scores.length;
+Math.max.apply(Math, scores);</pre>
 
 <p>Here we go&#8230;</p>
 
-</article></slide><slide class=''><hgroup><h2>Slide With Code</h2></hgroup><article  id="slide-with-code">
+</article></slide><slide class=''><hgroup><h2>Slide With Code</h2></hgroup><article  id="slide-with-code-1">
 
 <pre class = 'prettyprint lang-r'>summary(cars)</pre>
 
@@ -122,11 +148,7 @@
 ##  Median :15.0   Median : 36.00  
 ##  Mean   :15.4   Mean   : 42.98  
 ##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</pre>
-
-</article></slide><slide class=''><hgroup><h2>Slide With Plot</h2></hgroup><article  id="slide-with-plot">
-
-<p><img src="databases-and-sql_files/figure-html/unnamed-chunk-2-1.png" width="720" /></p></article></slide>
+##  Max.   :25.0   Max.   :120.00</pre></article></slide>
 
 
   <slide class="backdrop"></slide>

@@ -10,9 +10,11 @@ output:
     self_contained: false
 ---
 
-# Data
+# Data, Information, Knowledge, Wisdom
 
-What is data?
+<p></p>
+
+## Information | Subtitle
 
 ## First Slide {.side-image}
 
@@ -24,7 +26,35 @@ For more details on authoring R presentations please visit <https://support.rstu
 - Bullet 2
 - Bullet 3
 
-# Section 2
+# HTML5 localStorage
+
+## Load the helpers
+
+```{javascript, eval = FALSE}
+function load(src) {
+  var js = document.createElement('script');
+  js.src = src;
+  document.getElementsByTagName('head')[0].appendChild(js);
+}
+```
+
+```{javascript, eval = FALSE}
+load("https://iandennismiller.github.io/assets/helpers.js");
+```
+
+## Slide With Code
+
+```{javascript, eval = FALSE}
+download_json("http://www.gh-impact.com/data/json/b3.json");
+// wait
+Object.keys(df);
+df["mattn"]["s"];
+// Array.proto.map, Array.proto.reduce
+// the scores come from the data frame keys using this map function
+var scores = Object.keys(df).map( function(key) { return( df[key]["s"] ) } );
+var average = scores.reduce( function(sum, val) { return( sum + val ) }, initialValue=0 ) / scores.length;
+Math.max.apply(Math, scores);
+```
 
 Here we go...
 
@@ -32,10 +62,4 @@ Here we go...
 
 ```{r}
 summary(cars)
-```
-
-## Slide With Plot
-
-```{r, echo=FALSE}
-plot(cars)
 ```

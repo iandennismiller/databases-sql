@@ -11,6 +11,8 @@ open:
 	open docs/index.html
 
 clean:
+	rm -rf docs
+	mkdir docs
 	rm -f presentation/databases-and-sql.md
 	rm -f presentation/databases-and-sql.pdf
 	rm -f presentation/databases-and-sql.html
@@ -18,7 +20,7 @@ clean:
 	rm -rf presentation/_bookdown_files
 	rm -rf presentation/_book
 
-release: presentation
+release: clean presentation
 	git commit -am "release"
 	git push
 
