@@ -92,19 +92,33 @@
           </hgroup>
   </slide>
 
-<slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Data, Information, Knowledge, Wisdom</h2></hgroup><article  id="data-information-knowledge-wisdom">
+<script src='/assets/helpers.js'></script>
 
-<p>
+<slide class=''><hgroup><h2>Overview</h2></hgroup><article  id="overview" class="side-image">
 
-</p>
+<img src='assets/strategy.jpg' title='fig:'/><p class='caption'>picture of chess pieces</p>
+
+<ul>
+<li>What is <em>data</em>?</li>
+<li>What is a <em>database</em>?</li>
+<li>What are some kinds of databases? Cause this is a really long line.</li>
+<li>Hands-on examples
+
+<ul>
+<li>HTML5 localStorage</li>
+<li>sqlite3</li>
+<li>R with rsql</li>
+</ul></li>
+<li>Conclusion</li>
+</ul>
+
+</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Data, Information, Knowledge, Wisdom</h2></hgroup><article  id="data-information-knowledge-wisdom">
 
 </article></slide><slide class=''><hgroup><h2>Information </h2><h3> Subtitle</h3></hgroup><article  id="information-subtitle">
 
 </article></slide><slide class=''><hgroup><h2>First Slide</h2></hgroup><article  id="first-slide" class="side-image">
 
 <p>For more details on authoring R presentations please visit <a href='https://support.rstudio.com/hc/en-us/articles/200486468' title=''>https://support.rstudio.com/hc/en-us/articles/200486468</a>.</p>
-
-<img src='assets/spaghetti.jpg' title='fig:'/><p class='caption'>picture of spaghetti</p>
 
 <ul>
 <li>Bullet 1</li>
@@ -114,22 +128,14 @@
 
 </article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>HTML5 localStorage</h2></hgroup><article  id="html5-localstorage">
 
-</article></slide><slide class=''><hgroup><h2>Load the helpers</h2></hgroup><article  id="load-the-helpers">
+</article></slide><slide class=''><hgroup><h2>Load some data</h2></hgroup><article  id="load-some-data" class="smaller">
 
-<pre class = 'prettyprint lang-javascript'>function load(src) {
-  var js = document.createElement(&#39;script&#39;);
-  js.src = src;
-  document.getElementsByTagName(&#39;head&#39;)[0].appendChild(js);
-}</pre>
+<pre class = 'prettyprint lang-javascript'>get_json(&quot;/assets/ghimpact-b3.json&quot;);</pre>
 
-<pre class = 'prettyprint lang-javascript'>load(&quot;https://iandennismiller.github.io/assets/helpers.js&quot;);</pre>
+<pre class = 'prettyprint lang-javascript'>Object.keys(df);
+// wait</pre>
 
-</article></slide><slide class=''><hgroup><h2>Slide With Code</h2></hgroup><article  id="slide-with-code">
-
-<pre class = 'prettyprint lang-javascript'>download_json(&quot;http://www.gh-impact.com/data/json/b3.json&quot;);
-// wait
-Object.keys(df);
-df[&quot;mattn&quot;][&quot;s&quot;];
+<pre class = 'prettyprint lang-javascript'>df[&quot;mattn&quot;][&quot;s&quot;];
 // Array.proto.map, Array.proto.reduce
 // the scores come from the data frame keys using this map function
 var scores = Object.keys(df).map( function(key) { return( df[key][&quot;s&quot;] ) } );
@@ -138,7 +144,7 @@ Math.max.apply(Math, scores);</pre>
 
 <p>Here we go&#8230;</p>
 
-</article></slide><slide class=''><hgroup><h2>Slide With Code</h2></hgroup><article  id="slide-with-code-1">
+</article></slide><slide class=''><hgroup><h2>Slide With Code</h2></hgroup><article  id="slide-with-code">
 
 <pre class = 'prettyprint lang-r'>summary(cars)</pre>
 

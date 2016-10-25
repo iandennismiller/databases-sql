@@ -24,4 +24,7 @@ release: clean presentation
 	git commit -am "release"
 	git push
 
-.PHONY: presentation release open clean
+serve:
+	cd docs && python -m SimpleHTTPServer
+
+.PHONY: presentation release open clean serve

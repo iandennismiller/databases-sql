@@ -3,16 +3,28 @@ title: "Databases and SQL"
 author: "Ian Dennis Miller"
 date: "November 3, 2016"
 output:
-  ioslides_presentation:
-    autosize: yes
-    widescreen: true
-    css: assets/styles.css
-    self_contained: false
+    ioslides_presentation:
+        autosize: yes
+        widescreen: true
+        css: assets/styles.css
+        self_contained: false
 ---
+<script src='/assets/helpers.js'></script>
+
+## Overview {.side-image}
+
+![picture of chess pieces](assets/strategy.jpg)
+
+- What is *data*?
+- What is a *database*?
+- What are some kinds of databases?  Cause this is a really long line.
+- Hands-on examples
+    - HTML5 localStorage
+    - sqlite3
+    - R with rsql
+- Conclusion
 
 # Data, Information, Knowledge, Wisdom
-
-<p></p>
 
 ## Information | Subtitle
 
@@ -20,34 +32,24 @@ output:
 
 For more details on authoring R presentations please visit <https://support.rstudio.com/hc/en-us/articles/200486468>.
 
-![picture of spaghetti](assets/spaghetti.jpg)
-
 - Bullet 1
 - Bullet 2
 - Bullet 3
 
 # HTML5 localStorage
 
-## Load the helpers
+## Load some data {.smaller}
 
-```{javascript, eval = FALSE}
-function load(src) {
-  var js = document.createElement('script');
-  js.src = src;
-  document.getElementsByTagName('head')[0].appendChild(js);
-}
+```{javascript}
+get_json("/assets/ghimpact-b3.json");
 ```
 
-```{javascript, eval = FALSE}
-load("https://iandennismiller.github.io/assets/helpers.js");
-```
-
-## Slide With Code
-
-```{javascript, eval = FALSE}
-download_json("http://www.gh-impact.com/data/json/b3.json");
-// wait
+```{javascript}
 Object.keys(df);
+// wait
+```
+
+```{javascript}
 df["mattn"]["s"];
 // Array.proto.map, Array.proto.reduce
 // the scores come from the data frame keys using this map function

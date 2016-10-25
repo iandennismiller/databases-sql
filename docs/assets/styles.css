@@ -1,6 +1,14 @@
 article.side-image img {
     max-width: 50%;
+    max-height: 75%;
     float: right;
+    clear: both;
+}
+
+article.side-image p.caption {
+    max-width: 50%;
+    float: right;
+    clear: both;
 }
 
 #spaghetti-slide {
