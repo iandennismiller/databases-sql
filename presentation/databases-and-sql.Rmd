@@ -24,17 +24,66 @@ output:
     - R with rsql
 - Conclusion
 
-# Data, Information, Knowledge, Wisdom
+# What is "Data" | Let's orient the epistemology
 
-## Information | Subtitle
+## Looking at the World {.side-image .bigger}
 
-## First Slide {.side-image}
+![Microscope](assets/microscope.jpg)
 
-For more details on authoring R presentations please visit <https://support.rstudio.com/hc/en-us/articles/200486468>.
+- Observations, measurements, values, results
+    - specific to your domain of inquiry
+    - data is a general concept
+- data may be recorded or encoded
+    - making marks on paper
+    - arranging numbers into tables
+    - digital encoding
+- data are often the basis for scientific inquiry
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+## Information: a Property of our Universe {.side-image .bigger}
+
+![Maxwell's Demon](assets/maxwells-demon.png)
+
+- Information is physical, just like energy and mass.
+    + Maxwell's demon (1872): information reduces entropy
+- *Shannon information* (1948)
+    - entropy is unpredictability
+    - information is knowledge about an unpredictable event
+- **binary**: 0 or 1 ("base-2 number system")
+- **bit**: the amount information a binary value can contain
+
+## Binary Encodings {.side-image .bigger}
+
+![ASCII](assets/ascii.png)
+
+- **byte**: 8 bits of information
+- **encoding**: use information (*bytes*) to transmit a message (*data*)
+- **ASCII** (1960): American Standard Code for Information Interchange; a 1-byte encoding
+- **UTF-8** (1993): Unicode Transformation Format; *n-byte* encoding
+
+<!-- animate an arrow to point out the TAB character (ASCII 9) -->
+
+## Topology {.side-image .bigger}
+
+- Which way is your table oriented?
+
+## Summary {.side-image .bigger}
+
+![punch card](assets/punchcard.png)
+
+- data are specific to your research
+- store your data using as digital information
+- 
+
+# Databases
+
+## Flat Files
+
+- Tab Delimited
+    - ASCII encoding, character #9 is a delimiter
+    - literally how a printer would print tables
+- CSV (Comma Separated Values)
+    + Excel Dialect
+- 
 
 # HTML5 localStorage
 
