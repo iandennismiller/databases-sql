@@ -101,11 +101,10 @@
 <ul>
 <li>What is <em>data</em>?</li>
 <li>What is a <em>database</em>?</li>
-<li>What are some kinds of databases? Cause this is a really long line.</li>
 <li>Hands-on examples
 
 <ul>
-<li>HTML5 localStorage</li>
+<li>JSON and Map/Reduce</li>
 <li>sqlite3</li>
 <li>R with rsql</li>
 </ul></li>
@@ -258,43 +257,52 @@ Because his gifts do not match his words.
 <li>can be customized for different sorts of work</li>
 <li>usually has optimizations for &quot;scaling up&quot;</li>
 </ul></li>
-<li>different types of databases are suited for different work</li>
+<li>a database is software running on hardware
+
+<ul>
+<li>download it, run it, use it</li>
+</ul></li>
+<li>sometimes a database is embedded inside software
+
+<ul>
+<li>e.g. Firefox and Chrome store browser history in a database</li>
+</ul></li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2>Types of Databases</h2></hgroup><article  id="types-of-databases" class="side-image">
+</article></slide><slide class=''><hgroup><h2>Types of Databases</h2></hgroup><article  id="types-of-databases" class="side-image smaller">
 
 <img src='assets/mainframe.png' title='fig:'/><p class='caption'>IBM 704 at Langley</p>
 
 <ul>
-<li>flat files
+<li>flat files (1960s)
 
 <ul>
-<li>tab delimited, CSV, fixed width</li>
+<li>Tab delimited, CSV, fixed width</li>
 </ul></li>
-<li>data objects
-
-<ul>
-<li>excel, JSON, R data.frame</li>
-</ul></li>
-<li>key/value storage
-
-<ul>
-<li>HTML5 localStorage, Redis, Memcache</li>
-</ul></li>
-<li>relational
+<li>relational (1970s)
 
 <ul>
 <li>sqlite3, PostgreSQL, MySQL, MS SQL Server</li>
 </ul></li>
-<li>document
+<li>binary &quot;blob&quot; data objects (1980s)
 
 <ul>
-<li>CouchDB, MongoDB, Hadoop HDFS</li>
+<li>Excel, SPSS data file, R environment image</li>
 </ul></li>
-<li>graph
+<li>key/value storage (2000s)
+
+<ul>
+<li>Bigtable, Memcache, Redis, HTML5 localStorage</li>
+</ul></li>
+<li>graph (2000s)
 
 <ul>
 <li>Neo4J, OrientDB</li>
+</ul></li>
+<li>document (2010s)
+
+<ul>
+<li>JSON, CouchDB, MongoDB, Hadoop HDFS</li>
 </ul></li>
 </ul>
 
@@ -321,21 +329,55 @@ Because his gifts do not match his words.
 <li>CRLF</li>
 </ul></li>
 </ul></li>
-<li>Fixed Width</li>
+<li>Fixed Width: each column is exactly <em>n</em> characters</li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2>Data objects</h2></hgroup><article  id="data-objects" class="side-image">
+</article></slide><slide class=''><hgroup><h2>Binary &quot;blob&quot; Data objects</h2></hgroup><article  id="binary-blob-data-objects" class="side-image">
 
 <img src='assets/excel.png' title='fig:'/><p class='caption'>excel hex dump</p>
+
+<ul>
+<li>You need a special program to use these files
+
+<ul>
+<li>still basically just a table (like flat files)</li>
+<li>files usually include data <em>and</em> metadata</li>
+</ul></li>
+<li>examples of programs that use blobs
 
 <ul>
 <li>Excel
 
 <ul>
-<li>Binary object format</li>
-<li>requires special software to read/write</li>
-<li>includes <em>expressions</em>, beyond data</li>
+<li>includes <em>expressions</em> in addition to data</li>
+<li>some might argue Excel is the most prolific database software used today</li>
 </ul></li>
+<li>SPSS data files</li>
+<li>R environment image</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>key/value storage</h2></hgroup><article  id="keyvalue-storage" class="side-image">
+
+<ul>
+<li>BigTable</li>
+<li>HTML5 localStorage</li>
+<li>Redis</li>
+<li>Memcache</li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>relational</h2></hgroup><article  id="relational" class="side-image">
+
+<ul>
+<li>Sqlite3 (weakest, easiest)</li>
+<li>PostgreSQL (recommended)</li>
+<li>MySQL</li>
+<li>MS SQL Server</li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>document</h2></hgroup><article  id="document" class="side-image">
+
+<ul>
 <li>JSON
 
 <ul>
@@ -343,29 +385,68 @@ Because his gifts do not match his words.
 <li>object types: string, integer, float, <em>array</em>, <em>dictionary</em></li>
 <li>moving beyond matrix</li>
 </ul></li>
-<li>R data.frame
-
-<ul>
-<li>data <em>and</em> metadata</li>
-</ul></li>
+<li>CouchDB</li>
+<li>MongoDB</li>
+<li>Hadoop (HDFS with Map/Reduce)</li>
 </ul>
-
-</article></slide><slide class=''><hgroup><h2>key/value storage</h2></hgroup><article  id="keyvalue-storage" class="side-image">
-
-</article></slide><slide class=''><hgroup><h2>relational</h2></hgroup><article  id="relational" class="side-image">
-
-</article></slide><slide class=''><hgroup><h2>document</h2></hgroup><article  id="document" class="side-image">
 
 </article></slide><slide class=''><hgroup><h2>graph</h2></hgroup><article  id="graph" class="side-image">
 
-</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Hands on: Map/Reduce</h2></hgroup><article  id="hands-on-mapreduce">
+<ul>
+<li>Neo4J</li>
+<li>OrientDB</li>
+</ul>
 
-</article></slide><slide class=''><hgroup><h2>Load some data</h2></hgroup><article  id="load-some-data" class="smaller">
+</article></slide><slide class=''><hgroup><h2>Summary: Databases</h2></hgroup><article  id="summary-databases" class="side-image">
 
-<pre class = 'prettyprint lang-javascript'>get_json(&quot;/assets/ghimpact-b3.json&quot;);</pre>
+</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Hands on: MapReduce</h2></hgroup><article  id="hands-on-mapreduce">
 
-<pre class = 'prettyprint lang-javascript'>Object.keys(df);
+</article></slide><slide class=''><hgroup><h2>Map and Reduce</h2></hgroup><article  id="map-and-reduce" class="side-image smaller">
+
+<img src='assets/map-reduce.jpg' title='fig:'/><p class='caption'>Map Reduce</p>
+
+<ul>
+<li>map: \(map(x) = x^2\)
+
+<ul>
+<li>input values: [1, 2, 3]</li>
+<li>create <em>map</em> of [1, 2, 3] with \(map(x)\)
+
+<ul>
+<li>\(map_1 = 1^2 = 1\)</li>
+<li>\(map_2 = 2^2 = 4\)</li>
+<li>\(map_3 = 3^2 = 9\)</li>
+</ul></li>
+<li>map result: [1, 4, 9]</li>
+</ul></li>
+<li>reduce: \(sum_i = map_i + sum_{i-1}\)
+
+<ul>
+<li><em>reduce</em> map result [1, 4, 9] with \(sum\)</li>
+<li>\(sum_1 = 1 + 0\)</li>
+<li>\(sum_2 = 4 + 1\)</li>
+<li>\(sum_3 = 9 + 5 = 14\)</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Try it yourself</h2></hgroup><article  id="try-it-yourself" class="flexbox vcenter">
+
+<div class="centered">
+<p><a href='http://iandennismiller.github.io/uoft-coders-sql' title=''>http://iandennismiller.github.io/uoft-coders-sql</a></p></div>
+
+<div class="centered">
+<p><img src="assets/developer-tools.png"/></p></div>
+
+</article></slide><slide class=''><hgroup><h2>Example: gh-impact</h2></hgroup><article  id="example-gh-impact" class="smaller">
+
+<p>Load a JSON file</p>
+
+<pre class = 'prettyprint lang-javascript'>get_json(&quot;/assets/ghimpact-b3.json&quot;);
 // wait</pre>
+
+<p>View the usernames</p>
+
+<pre class = 'prettyprint lang-javascript'>Object.keys(df);</pre>
 
 <pre class = 'prettyprint lang-javascript'>df[&quot;mattn&quot;][&quot;s&quot;];
 // Array.proto.map, Array.proto.reduce
@@ -374,7 +455,62 @@ var scores = Object.keys(df).map( function(key) { return( df[key][&quot;s&quot;]
 var average = scores.reduce( function(sum, val) { return( sum + val ) }, initialValue=0 ) / scores.length;
 Math.max.apply(Math, scores);</pre>
 
-</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>SQL</h2></hgroup><article  id="sql">
+</article></slide><slide class=''><hgroup><h2>Statistics with MapReduce</h2></hgroup><article  id="statistics-with-mapreduce">
+
+<p>Mean</p>
+
+<p>\(\mu = \frac{1}{n}\displaystyle\sum_{i=1}^{n} x_i\)</p>
+
+<p>MapReduce Equivalent</p>
+
+<ul>
+<li>map: \(map_i = x_{i}\)</li>
+<li>reduce:
+
+<ul>
+<li>\(sum_{0} = map_{0}\)</li>
+<li>\(sum_{i} = map_{i} + sum_{i-1}\)</li>
+</ul></li>
+<li>\(mean = \frac{1}{n} sum\)</li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Summary: MapReduce</h2></hgroup><article  id="summary-mapreduce">
+
+<ul>
+<li>Many statistical functions can be represented in terms of MapReduce</li>
+<li>Databases that support MapReduce theoretically provide good scalability
+
+<ul>
+<li>Hadoop</li>
+<li>CouchDB</li>
+</ul></li>
+<li>Often uses javascript</li>
+</ul>
+
+</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Hands on: R with rsql</h2></hgroup><article  id="hands-on-r-with-rsql">
+
+</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Hands on: R with RSQLite</h2></hgroup><article  id="hands-on-r-with-rsqlite">
+
+</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Hands on: SQL with sqlite3</h2></hgroup><article  id="hands-on-sql-with-sqlite3">
+
+</article></slide><slide class=''><hgroup><h2>Plan</h2></hgroup><article  id="plan" class="smaller">
+
+<ul>
+<li>launch sqlite3 with a DB file</li>
+<li>help for sqlite</li>
+<li>how to read errors</li>
+<li>how to search for more information</li>
+<li>import and export CSV</li>
+<li>SELECT count() WHERE</li>
+<li>SELECT &#8230; WHERE</li>
+<li>SELECT &#8230; JOIN</li>
+<li>SELECT FROM</li>
+<li>SELECT AS</li>
+<li>INSERT &#8230;</li>
+<li>UPDATE &#8230; WHERE</li>
+<li>ALTER &#8230;</li>
+<li>DELETE &#8230; WHERE</li>
+</ul>
 
 </article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Conclusion</h2></hgroup><article  id="conclusion">
 

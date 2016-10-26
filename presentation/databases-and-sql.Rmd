@@ -17,9 +17,8 @@ output:
 
 - What is *data*?
 - What is a *database*?
-- What are some kinds of databases?  Cause this is a really long line.
 - Hands-on examples
-    - HTML5 localStorage
+    - JSON and Map/Reduce
     - sqlite3
     - R with rsql
 - Conclusion
@@ -116,24 +115,27 @@ output:
 - **database**: a type of information system
     - can be customized for different sorts of work
     - usually has optimizations for "scaling up"
-- different types of databases are suited for different work
+- a database is software running on hardware
+    + download it, run it, use it
+- sometimes a database is embedded inside software
+    + e.g. Firefox and Chrome store browser history in a database
 
-## Types of Databases {.side-image}
+## Types of Databases {.side-image .smaller}
 
 ![IBM 704 at Langley](assets/mainframe.png)
 
-- flat files
-    + tab delimited, CSV, fixed width
-- data objects
-    + excel, JSON, R data.frame
-- key/value storage
-    + HTML5 localStorage, Redis, Memcache
-- relational
+- flat files (1960s)
+    + Tab delimited, CSV, fixed width
+- relational (1970s)
     + sqlite3, PostgreSQL, MySQL, MS SQL Server
-- document
-    + CouchDB, MongoDB, Hadoop HDFS
-- graph
+- binary "blob" data objects (1980s)
+    + Excel, SPSS data file, R environment image
+- key/value storage (2000s)
+    + Bigtable, Memcache, Redis, HTML5 localStorage
+- graph (2000s)
     + Neo4J, OrientDB
+- document (2010s)
+    + JSON, CouchDB, MongoDB, Hadoop HDFS
 
 ## Flat Files {.side-image}
 
@@ -148,42 +150,95 @@ output:
         + quote is "
         + double-quote (i.e. "" for literal quote in field)
         + CRLF
-- Fixed Width
+- Fixed Width: each column is exactly *n* characters
 
-## Data objects {.side-image}
+## Binary "blob" Data objects {.side-image}
 
 ![excel hex dump](assets/excel.png)
 
-- Excel
-    + Binary object format
-    + requires special software to read/write
-    + includes *expressions*, beyond data
+- You need a special program to use these files
+    + still basically just a table (like flat files)
+    + files usually include data *and* metadata
+- examples of programs that use blobs
+    - Excel
+        + includes *expressions* in addition to data
+        + some might argue Excel is the most prolific database software used today
+    - SPSS data files
+    - R environment image
+
+## key/value storage {.side-image}
+
+- BigTable
+- HTML5 localStorage
+- Redis
+- Memcache
+
+## relational {.side-image}
+
+- Sqlite3 (weakest, easiest)
+- PostgreSQL (recommended)
+- MySQL
+- MS SQL Server
+
+## document {.side-image}
+
 - JSON
     + data is JavaScript
     + object types: string, integer, float, *array*, *dictionary*
     + moving beyond matrix
-- R data.frame
-    + data *and* metadata
-
-## key/value storage {.side-image}
-
-## relational {.side-image}
-
-## document {.side-image}
+- CouchDB
+- MongoDB
+- Hadoop (HDFS with Map/Reduce)
 
 ## graph {.side-image}
 
-# Hands on: Map/Reduce
+- Neo4J
+- OrientDB
 
-## Load some data {.smaller}
+## Summary: Databases {.side-image}
+
+# Hands on: MapReduce
+
+## Map and Reduce {.side-image .smaller}
+
+![Map Reduce](assets/map-reduce.jpg)
+
+- map: $map(x) = x^2$
+    - input values: [1, 2, 3]
+    - create *map* of [1, 2, 3] with $map(x)$
+        + $map_1 = 1^2 = 1$
+        + $map_2 = 2^2 = 4$
+        + $map_3 = 3^2 = 9$
+    - map result: [1, 4, 9]
+- reduce: $sum_i = map_i + sum_{i-1}$
+    + *reduce* map result [1, 4, 9] with $sum$
+    + $sum_1 = 1 + 0$
+    + $sum_2 = 4 + 1$
+    + $sum_3 = 9 + 5 = 14$
+
+## Try it yourself {.flexbox .vcenter}
+
+<div class="centered">
+http://iandennismiller.github.io/uoft-coders-sql
+</div>
+
+<div class="centered">
+<img src="assets/developer-tools.png"/>
+</div>
+
+## Example: gh-impact {.smaller}
+
+Load a JSON file
 
 ```{javascript}
 get_json("/assets/ghimpact-b3.json");
+// wait
 ```
+
+View the usernames
 
 ```{javascript}
 Object.keys(df);
-// wait
 ```
 
 ```{javascript}
@@ -195,7 +250,50 @@ var average = scores.reduce( function(sum, val) { return( sum + val ) }, initial
 Math.max.apply(Math, scores);
 ```
 
-# SQL
+## Statistics with MapReduce
+
+Mean
+
+$\mu = \frac{1}{n}\displaystyle\sum_{i=1}^{n} x_i$
+
+MapReduce Equivalent
+
+- map: $map_i = x_{i}$
+- reduce:
+    - $sum_{0} = map_{0}$
+    - $sum_{i} = map_{i} + sum_{i-1}$
+- $mean = \frac{1}{n} sum$
+
+## Summary: MapReduce
+
+- Many statistical functions can be represented in terms of MapReduce
+- Databases that support MapReduce theoretically provide good scalability
+    + Hadoop
+    + CouchDB
+- Often uses javascript
+
+# Hands on: R with rsql
+
+# Hands on: R with RSQLite
+
+# Hands on: SQL with sqlite3
+
+## Plan {.smaller}
+
+- launch sqlite3 with a DB file
+- help for sqlite
+- how to read errors
+- how to search for more information
+- import and export CSV
+- SELECT count() WHERE
+- SELECT ... WHERE
+- SELECT ... JOIN
+- SELECT FROM
+- SELECT AS
+- INSERT ...
+- UPDATE ... WHERE
+- ALTER ...
+- DELETE ... WHERE
 
 # Conclusion
 
