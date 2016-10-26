@@ -114,6 +114,41 @@
 
 </article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>What is &quot;Data&quot; </h2><h3> Let&#39;s orient the epistemology</h3></hgroup><article  id="what-is-data-lets-orient-the-epistemology">
 
+</article></slide><slide class=''><hgroup><h2>The Word &quot;Data&quot;</h2></hgroup><article  id="the-word-data" class="side-image">
+
+<img src='assets/plautus.jpg' title='fig:'/><p class='caption'>Plautus</p>
+
+<ul>
+<li>data (plural), datum (singular)</li>
+<li>etymology
+
+<ul>
+<li>borrowed from Latin</li>
+<li>noun: gift, present</li>
+</ul></li>
+<li>English language definitions
+
+<ul>
+<li>a measurement</li>
+<li>a fact from direct observation</li>
+</ul></li>
+</ul>
+
+<div style="font-style: italic;">
+<p>
+
+Quia non suppetunt dictis <b>data</b>.
+
+</p>
+
+<p>
+
+Because his gifts do not match his words.
+
+</p>
+
+<p>— Plautus, Asinaria 56 (c. 254 BCE – 184 BCE)</p></div>
+
 </article></slide><slide class=''><hgroup><h2>Looking at the World</h2></hgroup><article  id="looking-at-the-world" class="side-image bigger">
 
 <img src='assets/microscope.jpg' title='fig:'/><p class='caption'>Microscope</p>
@@ -133,6 +168,22 @@
 <li>digital encoding</li>
 </ul></li>
 <li>data are often the basis for scientific inquiry</li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Table Topology</h2></hgroup><article  id="table-topology" class="side-image">
+
+<img src='assets/table-of-weights.jpg' title='fig:'/><p class='caption'>Table of Bushel Weights</p>
+
+<ul>
+<li>Table: a 2-D matrix with rows, columns, and maybe row/column names</li>
+<li>Which way is this table oriented?
+
+<ul>
+<li><em>wide</em>: variable in its own column, case/id/event on its own row.</li>
+<li><em>long</em>: every data point on its own row. Common columns: id, variable, value. (e.g. time series data.)</li>
+<li><em>pivot</em>: some mixture of raw and summary data. Common for data portals and Excel.</li>
+</ul></li>
+<li>Transpose: rotate table so columns become rows</li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>Information: a Property of our Universe</h2></hgroup><article  id="information-a-property-of-our-universe" class="side-image bigger">
@@ -166,29 +217,93 @@
 <li><strong>UTF-8</strong> (1993): Unicode Transformation Format; <em>n-byte</em> encoding</li>
 </ul>
 
-<!-- animate an arrow to point out the TAB character (ASCII 9) -->
+<div class="build">
+<p><img class="to-build build-fade" id="ascii-arrow" src="assets/red-arrow.png" /></p></div>
 
-</article></slide><slide class=''><hgroup><h2>Topology</h2></hgroup><article  id="topology" class="side-image bigger">
+<!-- animate an arrow to point out the HORIZONTAL TAB character (ASCII 9) -->
 
-<ul>
-<li>Which way is your table oriented?</li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>Summary</h2></hgroup><article  id="summary" class="side-image bigger">
+</article></slide><slide class=''><hgroup><h2>Summary: What is &quot;Data?&quot;</h2></hgroup><article  id="summary-what-is-data" class="side-image bigger">
 
 <img src='assets/punchcard.png' title='fig:'/><p class='caption'>punch card</p>
 
 <ul>
-<li>data are specific to your research</li>
-<li>store your data using as digital information</li>
-<li></li>
-</ul>
-
-</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Databases</h2></hgroup><article  id="databases">
-
-</article></slide><slide class=''><hgroup><h2>Flat Files</h2></hgroup><article  id="flat-files">
+<li><em>data</em> are specific to your research
 
 <ul>
+<li>literally: a gift</li>
+</ul></li>
+<li><em>encode</em> your <em>data</em> as digital <em>information</em>
+
+<ul>
+<li>possibly with expensive measurement hardware</li>
+</ul></li>
+<li>an <strong>information system</strong> stores and retrieves your <em>data</em>
+
+<ul>
+<li>maybe you have access to a digital computer? That would be a good information system.</li>
+<li>punch cards will work, but I recommend a Solid State Drive (SSD)</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Databases </h2><h3> a brief discussion of several ways to store information</h3></hgroup><article  id="databases-a-brief-discussion-of-several-ways-to-store-information">
+
+</article></slide><slide class=''><hgroup><h2>Introducing the Database</h2></hgroup><article  id="introducing-the-database" class="side-image bigger">
+
+<img src='assets/ibm-2311-memory-unit.jpg' title='fig:'/><p class='caption'>IBM 2311 memory unit</p>
+
+<ul>
+<li><strong>database</strong>: a type of information system
+
+<ul>
+<li>can be customized for different sorts of work</li>
+<li>usually has optimizations for &quot;scaling up&quot;</li>
+</ul></li>
+<li>different types of databases are suited for different work</li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Types of Databases</h2></hgroup><article  id="types-of-databases" class="side-image">
+
+<img src='assets/mainframe.png' title='fig:'/><p class='caption'>IBM 704 at Langley</p>
+
+<ul>
+<li>flat files
+
+<ul>
+<li>tab delimited, CSV, fixed width</li>
+</ul></li>
+<li>data objects
+
+<ul>
+<li>excel, JSON, R data.frame</li>
+</ul></li>
+<li>key/value storage
+
+<ul>
+<li>HTML5 localStorage, Redis, Memcache</li>
+</ul></li>
+<li>relational
+
+<ul>
+<li>sqlite3, PostgreSQL, MySQL, MS SQL Server</li>
+</ul></li>
+<li>document
+
+<ul>
+<li>CouchDB, MongoDB, Hadoop HDFS</li>
+</ul></li>
+<li>graph
+
+<ul>
+<li>Neo4J, OrientDB</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Flat Files</h2></hgroup><article  id="flat-files" class="side-image">
+
+<img src='assets/csv.png' title='fig:'/><p class='caption'>csv</p>
+
+<ul>
+<li>Essentially just a table (matrix)</li>
 <li>Tab Delimited
 
 <ul>
@@ -198,12 +313,52 @@
 <li>CSV (Comma Separated Values)
 
 <ul>
-<li>Excel Dialect</li>
+<li>Excel Dialect
+
+<ul>
+<li>quote is &quot;</li>
+<li>double-quote (i.e. &quot;&quot; for literal quote in field)</li>
+<li>CRLF</li>
 </ul></li>
-<li></li>
+</ul></li>
+<li>Fixed Width</li>
 </ul>
 
-</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>HTML5 localStorage</h2></hgroup><article  id="html5-localstorage">
+</article></slide><slide class=''><hgroup><h2>Data objects</h2></hgroup><article  id="data-objects" class="side-image">
+
+<img src='assets/excel.png' title='fig:'/><p class='caption'>excel hex dump</p>
+
+<ul>
+<li>Excel
+
+<ul>
+<li>Binary object format</li>
+<li>requires special software to read/write</li>
+<li>includes <em>expressions</em>, beyond data</li>
+</ul></li>
+<li>JSON
+
+<ul>
+<li>data is JavaScript</li>
+<li>object types: string, integer, float, <em>array</em>, <em>dictionary</em></li>
+<li>moving beyond matrix</li>
+</ul></li>
+<li>R data.frame
+
+<ul>
+<li>data <em>and</em> metadata</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>key/value storage</h2></hgroup><article  id="keyvalue-storage" class="side-image">
+
+</article></slide><slide class=''><hgroup><h2>relational</h2></hgroup><article  id="relational" class="side-image">
+
+</article></slide><slide class=''><hgroup><h2>document</h2></hgroup><article  id="document" class="side-image">
+
+</article></slide><slide class=''><hgroup><h2>graph</h2></hgroup><article  id="graph" class="side-image">
+
+</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Hands on: Map/Reduce</h2></hgroup><article  id="hands-on-mapreduce">
 
 </article></slide><slide class=''><hgroup><h2>Load some data</h2></hgroup><article  id="load-some-data" class="smaller">
 
@@ -219,19 +374,11 @@ var scores = Object.keys(df).map( function(key) { return( df[key][&quot;s&quot;]
 var average = scores.reduce( function(sum, val) { return( sum + val ) }, initialValue=0 ) / scores.length;
 Math.max.apply(Math, scores);</pre>
 
-<p>Here we go&#8230;</p>
+</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>SQL</h2></hgroup><article  id="sql">
 
-</article></slide><slide class=''><hgroup><h2>Slide With Code</h2></hgroup><article  id="slide-with-code">
+</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Conclusion</h2></hgroup><article  id="conclusion">
 
-<pre class = 'prettyprint lang-r'>summary(cars)</pre>
-
-<pre >##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</pre></article></slide>
+</article></slide><slide class=''><hgroup><h2>Thank you</h2></hgroup><article  id="thank-you"></article></slide>
 
 
   <slide class="backdrop"></slide>

@@ -1,26 +1,3 @@
-article.side-image {
-    height: 100%;
-}
-
-article.side-image img {
-    max-width: 50%;
-    max-height: 75%;
-    float: right;
-    clear: both;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-article.side-image p.caption {
-    max-width: 50%;
-    float: right;
-    clear: both;
-}
-
-article p.caption {
-    font-size: 16pt;
-}
-
 /* Size variants */
 
 article.bigger p, article.bigger ul {
@@ -48,6 +25,30 @@ article.bigger q:before, article.bigger q:after {
   font-size: 64px;
 }
 
+/* side-image */
+
+article.side-image {
+    height: 100%;
+}
+
+article.side-image img {
+    max-width: 50%;
+    max-height: 75%;
+    float: right;
+    clear: both;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+article.side-image p.caption {
+    max-width: 50%;
+    float: right;
+    clear: both;
+    font-size: 16pt;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 /* Individual Slides */
 
 #spaghetti-slide {
@@ -56,4 +57,15 @@ article.bigger q:before, article.bigger q:after {
 
 article#information-a-property-of-our-universe img {
     width: 50%;
+}
+
+#ascii-arrow {
+    position: fixed;
+    left: 625px;
+    top: 380px;
+    transform: rotate(30deg);
+}
+
+.build .build-fade {
+  opacity: 0.9;
 }

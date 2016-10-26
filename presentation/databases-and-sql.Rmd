@@ -26,6 +26,24 @@ output:
 
 # What is "Data" | Let's orient the epistemology
 
+## The Word "Data" {.side-image}
+
+![Plautus](assets/plautus.jpg)
+
+- data (plural), datum (singular)
+- etymology
+    - borrowed from Latin
+    - noun: gift, present
+- English language definitions
+    + a measurement
+    + a fact from direct observation
+
+<div style="font-style: italic;">
+<p>Quia non suppetunt dictis <b>data</b>.</p>
+<p>Because his gifts do not match his words.</p>
+&mdash; Plautus, Asinaria 56 (c. 254 BCE – 184 BCE)
+</div>
+
 ## Looking at the World {.side-image .bigger}
 
 ![Microscope](assets/microscope.jpg)
@@ -38,6 +56,17 @@ output:
     - arranging numbers into tables
     - digital encoding
 - data are often the basis for scientific inquiry
+
+## Table Topology {.side-image}
+
+![Table of Bushel Weights](assets/table-of-weights.jpg)
+
+- Table: a 2-D matrix with rows, columns, and maybe row/column names
+- Which way is this table oriented?
+    - *wide*: variable in its own column, case/id/event on its own row.
+    - *long*: every data point on its own row.  Common columns: id, variable, value.  (e.g. time series data.)
+    - *pivot*: some mixture of raw and summary data.  Common for data portals and Excel.
+- Transpose: rotate table so columns become rows
 
 ## Information: a Property of our Universe {.side-image .bigger}
 
@@ -60,32 +89,91 @@ output:
 - **ASCII** (1960): American Standard Code for Information Interchange; a 1-byte encoding
 - **UTF-8** (1993): Unicode Transformation Format; *n-byte* encoding
 
-<!-- animate an arrow to point out the TAB character (ASCII 9) -->
+<div class="build">
+<img class="to-build build-fade" id="ascii-arrow" src="assets/red-arrow.png" />
+</div>
 
-## Topology {.side-image .bigger}
+<!-- animate an arrow to point out the HORIZONTAL TAB character (ASCII 9) -->
 
-- Which way is your table oriented?
-
-## Summary {.side-image .bigger}
+## Summary: What is "Data?" {.side-image .bigger}
 
 ![punch card](assets/punchcard.png)
 
-- data are specific to your research
-- store your data using as digital information
-- 
+- *data* are specific to your research
+    + literally: a gift
+- *encode* your *data* as digital *information*
+    - possibly with expensive measurement hardware
+- an **information system** stores and retrieves your *data*
+    - maybe you have access to a digital computer?  That would be a good information system.
+    - punch cards will work, but I recommend a Solid State Drive (SSD)
 
-# Databases
+# Databases | a brief discussion of several ways to store information
 
-## Flat Files
+## Introducing the Database {.side-image .bigger}
 
+![IBM 2311 memory unit](assets/ibm-2311-memory-unit.jpg)
+
+- **database**: a type of information system
+    - can be customized for different sorts of work
+    - usually has optimizations for "scaling up"
+- different types of databases are suited for different work
+
+## Types of Databases {.side-image}
+
+![IBM 704 at Langley](assets/mainframe.png)
+
+- flat files
+    + tab delimited, CSV, fixed width
+- data objects
+    + excel, JSON, R data.frame
+- key/value storage
+    + HTML5 localStorage, Redis, Memcache
+- relational
+    + sqlite3, PostgreSQL, MySQL, MS SQL Server
+- document
+    + CouchDB, MongoDB, Hadoop HDFS
+- graph
+    + Neo4J, OrientDB
+
+## Flat Files {.side-image}
+
+![csv](assets/csv.png)
+
+- Essentially just a table (matrix)
 - Tab Delimited
     - ASCII encoding, character #9 is a delimiter
     - literally how a printer would print tables
 - CSV (Comma Separated Values)
     + Excel Dialect
-- 
+        + quote is "
+        + double-quote (i.e. "" for literal quote in field)
+        + CRLF
+- Fixed Width
 
-# HTML5 localStorage
+## Data objects {.side-image}
+
+![excel hex dump](assets/excel.png)
+
+- Excel
+    + Binary object format
+    + requires special software to read/write
+    + includes *expressions*, beyond data
+- JSON
+    + data is JavaScript
+    + object types: string, integer, float, *array*, *dictionary*
+    + moving beyond matrix
+- R data.frame
+    + data *and* metadata
+
+## key/value storage {.side-image}
+
+## relational {.side-image}
+
+## document {.side-image}
+
+## graph {.side-image}
+
+# Hands on: Map/Reduce
 
 ## Load some data {.smaller}
 
@@ -107,10 +195,8 @@ var average = scores.reduce( function(sum, val) { return( sum + val ) }, initial
 Math.max.apply(Math, scores);
 ```
 
-Here we go...
+# SQL
 
-## Slide With Code
+# Conclusion
 
-```{r}
-summary(cars)
-```
+## Thank you
