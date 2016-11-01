@@ -12,4 +12,5 @@
 - Plautus: [https://commons.wikimedia.org/wiki/File:Plautus.jpg](https://commons.wikimedia.org/wiki/File:Plautus.jpg)
 - Red Arrow: [https://commons.wikimedia.org/wiki/File:PES-Red-Arrow.svg](https://commons.wikimedia.org/wiki/File:PES-Red-Arrow.svg)
 - Map Reduce: [http://xrds.acm.org/article.cfm?aid=2331053](http://xrds.acm.org/article.cfm?aid=2331053)
+- Key Value: [https://commons.wikimedia.org/wiki/File:KeyValue.PNG](https://commons.wikimedia.org/wiki/File:KeyValue.PNG)
 - 

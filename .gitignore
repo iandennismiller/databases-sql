@@ -2,7 +2,8 @@
 .Rhistory
 .RData
 .Ruserdata
-presentation/*.md
-presentation/*-figure/
-presentation/*_files/
-presentation/*.html
+/presentation/*.md
+/presentation/*-figure/
+/presentation/*_files/
+/presentation/*.html
+/.ipynb_checkpoints/

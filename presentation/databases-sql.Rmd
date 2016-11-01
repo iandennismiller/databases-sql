@@ -168,6 +168,8 @@ output:
 
 ## key/value storage {.side-image}
 
+![key value](assets/key-value.png)
+
 - BigTable
 - HTML5 localStorage
 - Redis
