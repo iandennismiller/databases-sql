@@ -177,12 +177,16 @@ output:
 
 ## relational {.side-image}
 
+![relational database schema](assets/relational-database-schema.png)
+
 - Sqlite3 (weakest, easiest)
 - PostgreSQL (recommended)
 - MySQL
 - MS SQL Server
 
 ## document {.side-image}
+
+![JSON](assets/json.png)
 
 - JSON
     + data is JavaScript
@@ -193,6 +197,8 @@ output:
 - Hadoop (HDFS with Map/Reduce)
 
 ## graph {.side-image}
+
+![Graph: Alice and Bob are on the Chess team](assets/graph-db.png)
 
 - Neo4J
 - OrientDB
@@ -274,11 +280,25 @@ MapReduce Equivalent
     + CouchDB
 - Often uses javascript
 
-# Hands on: R with rsql
+# Hands on: R
 
-# Hands on: R with RSQLite
+## Plan {.smaller}
 
-# Hands on: SQL with sqlite3
+- get a data set from R
+- select from it using SQL
+- export it as CSV to filesystem
+- in sqlite, import CSV and create database
+- use rsqlite connection to select direct from database
+
+# Hands on: Python
+
+## Plan {.smaller}
+
+- open sqlite3 database
+- send a query
+- parse and print the result
+
+# Hands on: sqlite3
 
 ## Plan {.smaller}
 
