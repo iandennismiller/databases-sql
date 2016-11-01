@@ -211,23 +211,25 @@ output:
 
 ![Map Reduce](assets/map-reduce.jpg)
 
-- map: $map(x) = x^2$
-    - input values: [1, 2, 3]
-    - create *map* of [1, 2, 3] with $map(x)$
+- functions that take functions as parameters
+- map(f): $f(x) = x^2$
+    - values: [1, 2, 3]
+    - create *map* of [1, 2, 3] with $f(x) = x^2$
         + $map_1 = 1^2 = 1$
         + $map_2 = 2^2 = 4$
         + $map_3 = 3^2 = 9$
-    - map result: [1, 4, 9]
-- reduce: $sum_i = map_i + sum_{i-1}$
-    + *reduce* map result [1, 4, 9] with $sum$
+    - result: [1, 4, 9]
+- reduce(f): $sum_i = map_i + sum_{i-1}$
+    + *reduce* result [1, 4, 9] with $f = sum$
     + $sum_1 = 1 + 0$
     + $sum_2 = 4 + 1$
-    + $sum_3 = 9 + 5 = 14$
+    + $sum_3 = 9 + 5$
+    + $sum = 14$
 
 ## Try it yourself {.flexbox .vcenter}
 
 <div class="centered">
-http://iandennismiller.github.io/uoft-coders-sql
+http://iandennismiller.github.io/databases-sql
 </div>
 
 <div class="centered">
@@ -260,43 +262,48 @@ Math.max.apply(Math, scores);
 
 ## Statistics with MapReduce
 
-Mean
+Mean (average), expressed as a mathematical function:
 
 $\mu = \frac{1}{n}\displaystyle\sum_{i=1}^{n} x_i$
 
-MapReduce Equivalent
+MapReduce Equivalent:
 
-- map: $map_i = x_{i}$
-- reduce:
+- map: $map_i = x_{i}$ (retrieve the value)
+- reduce (accumulate):
     - $sum_{0} = map_{0}$
     - $sum_{i} = map_{i} + sum_{i-1}$
 - $mean = \frac{1}{n} sum$
 
 ## Summary: MapReduce
 
+- map and reduce functions can be broken down to run on lots of computers at once
 - Many statistical functions can be represented in terms of MapReduce
 - Databases that support MapReduce theoretically provide good scalability
     + Hadoop
     + CouchDB
 - Often uses javascript
+- for some questions, using lots of computers in parallel might be the only feasible way to finish a computation in time
 
-# Hands on: R
+# Hands on: R and SQL
 
 ## Plan {.smaller}
 
-- get a data set from R
+- open R Jupyter notebook
+- get a data set from R: mtcars
 - select from it using SQL
 - export it as CSV to filesystem
 - in sqlite, import CSV and create database
 - use rsqlite connection to select direct from database
 
-# Hands on: Python
+# Hands on: Python and SQL
 
 ## Plan {.smaller}
 
+- open Python Jupyter notebook
 - open sqlite3 database
 - send a query
 - parse and print the result
+- load directly into pandas
 
 # Hands on: sqlite3
 

@@ -414,33 +414,35 @@ Because his gifts do not match his words.
 <img src='assets/map-reduce.jpg' title='fig:'/><p class='caption'>Map Reduce</p>
 
 <ul>
-<li>map: \(map(x) = x^2\)
+<li>functions that take functions as parameters</li>
+<li>map(f): \(f(x) = x^2\)
 
 <ul>
-<li>input values: [1, 2, 3]</li>
-<li>create <em>map</em> of [1, 2, 3] with \(map(x)\)
+<li>values: [1, 2, 3]</li>
+<li>create <em>map</em> of [1, 2, 3] with \(f(x) = x^2\)
 
 <ul>
 <li>\(map_1 = 1^2 = 1\)</li>
 <li>\(map_2 = 2^2 = 4\)</li>
 <li>\(map_3 = 3^2 = 9\)</li>
 </ul></li>
-<li>map result: [1, 4, 9]</li>
+<li>result: [1, 4, 9]</li>
 </ul></li>
-<li>reduce: \(sum_i = map_i + sum_{i-1}\)
+<li>reduce(f): \(sum_i = map_i + sum_{i-1}\)
 
 <ul>
-<li><em>reduce</em> map result [1, 4, 9] with \(sum\)</li>
+<li><em>reduce</em> result [1, 4, 9] with \(f = sum\)</li>
 <li>\(sum_1 = 1 + 0\)</li>
 <li>\(sum_2 = 4 + 1\)</li>
-<li>\(sum_3 = 9 + 5 = 14\)</li>
+<li>\(sum_3 = 9 + 5\)</li>
+<li>\(sum = 14\)</li>
 </ul></li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>Try it yourself</h2></hgroup><article  id="try-it-yourself" class="flexbox vcenter">
 
 <div class="centered">
-<p><a href='http://iandennismiller.github.io/uoft-coders-sql' title=''>http://iandennismiller.github.io/uoft-coders-sql</a></p></div>
+<p><a href='http://iandennismiller.github.io/databases-sql' title=''>http://iandennismiller.github.io/databases-sql</a></p></div>
 
 <div class="centered">
 <p><img src="assets/developer-tools.png"/></p></div>
@@ -465,15 +467,15 @@ Math.max.apply(Math, scores);</pre>
 
 </article></slide><slide class=''><hgroup><h2>Statistics with MapReduce</h2></hgroup><article  id="statistics-with-mapreduce">
 
-<p>Mean</p>
+<p>Mean (average), expressed as a mathematical function:</p>
 
 <p>\(\mu = \frac{1}{n}\displaystyle\sum_{i=1}^{n} x_i\)</p>
 
-<p>MapReduce Equivalent</p>
+<p>MapReduce Equivalent:</p>
 
 <ul>
-<li>map: \(map_i = x_{i}\)</li>
-<li>reduce:
+<li>map: \(map_i = x_{i}\) (retrieve the value)</li>
+<li>reduce (accumulate):
 
 <ul>
 <li>\(sum_{0} = map_{0}\)</li>
@@ -485,6 +487,7 @@ Math.max.apply(Math, scores);</pre>
 </article></slide><slide class=''><hgroup><h2>Summary: MapReduce</h2></hgroup><article  id="summary-mapreduce">
 
 <ul>
+<li>map and reduce functions can be broken down to run on lots of computers at once</li>
 <li>Many statistical functions can be represented in terms of MapReduce</li>
 <li>Databases that support MapReduce theoretically provide good scalability
 
@@ -493,21 +496,22 @@ Math.max.apply(Math, scores);</pre>
 <li>CouchDB</li>
 </ul></li>
 <li>Often uses javascript</li>
+<li>for some questions, using lots of computers in parallel might be the only feasible way to finish a computation in time</li>
 </ul>
 
-</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Hands on: R</h2></hgroup><article  id="hands-on-r">
+</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Hands on: R and SQL</h2></hgroup><article  id="hands-on-r-and-sql">
 
 </article></slide><slide class=''><hgroup><h2>Plan</h2></hgroup><article  id="plan" class="smaller">
 
 <ul>
-<li>get a data set from R</li>
+<li>get a data set from R: mtcars</li>
 <li>select from it using SQL</li>
 <li>export it as CSV to filesystem</li>
 <li>in sqlite, import CSV and create database</li>
 <li>use rsqlite connection to select direct from database</li>
 </ul>
 
-</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Hands on: Python</h2></hgroup><article  id="hands-on-python">
+</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Hands on: Python and SQL</h2></hgroup><article  id="hands-on-python-and-sql">
 
 </article></slide><slide class=''><hgroup><h2>Plan</h2></hgroup><article  id="plan-1" class="smaller">
 
